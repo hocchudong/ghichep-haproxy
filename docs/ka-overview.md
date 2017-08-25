@@ -93,9 +93,9 @@ ____
 
 			nmcli
 
-	- Trong các phần tiếp theo sẽ nói rõ ý nghĩa của các câu lệnh trong file cấu hình của KeepAlived. Bạn cũng có thể tham khảo qua file tiếng anh sau:
+	- Trong các phần tiếp theo sẽ nói rõ ý nghĩa của các câu lệnh trong file cấu hình của KeepAlived. Bạn cũng có thể tham khảo qua file tiếng anh sau tại [Help File - KeepAlived Configuration](../files/helpKeepAlived.conf)
 
-			
+
 ____
 
 # <a name="content-others">Các nội dung khác</a>
