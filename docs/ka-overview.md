@@ -85,8 +85,10 @@ ____
 
 		trong đó: 172.16.69.254/24 là địa chỉ Virtual IP với subnet mask là 32 và ens33 là interface cho phép chạy VIP.
 
-	- Khởi động lại keepalived:
-
+	- Cấp phép và khởi động lại keepalived:
+			echo "net.ipv4.ip_nonlocal_bind = 1" >> /etc/sysctl.conf
+			echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
+			# cho phép gán địa chỉ IP mức kernel và forward packet to other nodes
 			systemctl restart keepalived
 
 		chạy câu lệnh sau để kiểm tra kết quả:
