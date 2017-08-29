@@ -8,7 +8,7 @@ ____
 - [3.1 Các block cấu hình trong keepalived](#about)
 - [3.2 Nội dung cấu hình trong block `global_defs`](#global_defs)
 - [3.3 Nội dung cấu hình trong block `static_ipaddress static_routes`](#static_ipaddress)
-- [](#)
+- [3.4 Nội dung cấu hình trong block `vrrp_instance`](#vrrp_instance)
 - [](#)
 - [Các nội dung khác](#content-others)
 
@@ -31,6 +31,16 @@ ____
 - ### <a name="global_defs">3.2 Nội dung cấu hình trong block `global_defs`</a>
 
     + Chức năng của block này là cho phép cấu hình để nhận thông báo khi có sự cố xảy ra trong hệ thống load balancer. Đây là block cấu hình tùy chọn nên không nhất thiết phải có trong file cấu hình của KeepAlived.
+
+    + Cách khai báo cấu hình block `global_defs` như sau:
+
+            global_defs {
+                notification_email {
+                    ...
+                }
+                notification_email_from
+                ...
+            }
 
     + Trong block chính global_defs có thể bao gồm các cấu hình như sau:
 
@@ -97,7 +107,21 @@ ____
                     ...
                 }
 
-- ### <a name=""></a>
+- ### <a name="vrrp_instance">3.4 Nội dung cấu hình trong block `vrrp_instance`</a>
+
+    + vrrp_instance: là block cho phép cấu hình chuyển đổi địa chỉ IP (chuyển đổi các địa chỉ VIP) ứng với mỗi trường hợp của một nhóm trong vrrp_sync_group.
+
+    + Cách khai báo chung cho block `vrrp_instance` như sau:
+
+        vrrp_instance name {
+            state MASTER|BACKUP|SLAVE
+            interface eth0
+            ...
+        }
+
+    + Trong block `vrrp_instance` có thể khai báo các cấu hình sau:
+
+        
 - ### <a name=""></a>
 
 
